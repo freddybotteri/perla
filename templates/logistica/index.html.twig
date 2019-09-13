@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'blog_index' %}
+
+{% block main %}
+
+    	
+  
+
+
+	    <h1>logistica</h1>
+
+	    <div class="input-group">
+		  <span class="input-group-btn">
+		    <button class="btn btn-default" type="button">SEARCH</button>
+		  </span>
+		  <input type="text" class="form-control">
+		</div>
+		<br>
+		<div class="section">
+
+		
+		    {% for item in items %}
+		        <article class="post" style="box-shadow: 10px 10px 5px grey;">
+		            <h2>
+		                {{ item.name }}
+		            </h2>
+		            <a class="btn btn-warning"  href="{{ path('logistica_prod', {prodid: item.id,prodname:item.name,prodcita:item.country}) }}"> {{item.country}}</a>
+		            <p>{{ item.description }}</p>
+
+		        </article>
+		    {% endfor %}
+
+	    </div>
+
+
+    
+
+    
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{
+  "entrypoints": {
+    "js/app": {
+      "js": [
+        "/blogsy/public/build/vendors~70e61e62.fcea2503.js",
+        "/blogsy/public/build/vendors~d0214e58.2af2529d.js",
+        "/blogsy/public/build/js/app.23ef4f60.js"
+      ]
+    },
+    "js/login": {
+      "js": [
+        "/blogsy/public/build/vendors~70e61e62.fcea2503.js",
+        "/blogsy/public/build/js/login.7c1fc2ac.js"
+      ]
+    },
+    "js/admin": {
+      "js": [
+        "/blogsy/public/build/vendors~70e61e62.fcea2503.js",
+        "/blogsy/public/build/vendors~4ab51824.7f92ab17.js",
+        "/blogsy/public/build/js/admin.256a9071.js"
+      ]
+    },
+    "js/search": {
+      "js": [
+        "/blogsy/public/build/vendors~70e61e62.fcea2503.js",
+        "/blogsy/public/build/js/search.ef0a5a34.js"
+      ]
+    },
+    "css/app": {
+      "css": [
+        "/blogsy/public/build/css/app.4aa95248.css"
+      ]
+    },
+    "css/admin": {
+      "css": [
+        "/blogsy/public/build/css/admin.1b3ff8e3.css"
+      ]
+    },
+    "css/page": {
+      "css": [
+        "/blogsy/public/build/css/landing-page.min.css"
+      ]
+    }
+  }
+}

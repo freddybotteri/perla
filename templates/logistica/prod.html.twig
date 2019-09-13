@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'blog_index' %}
+
+{% block main %}
+
+    	
+  
+
+
+	    <h1>Resultati    -    {{name}}</h1>
+
+	     
+
+
+        {% for producto in store  %}
+
+        	{% if producto.id == id %}
+
+        		{% for item in producto.items %}
+        			
+        			{% if item.qty < item.minQty %}
+        				<article class="post row" style="box-shadow: 10px 10px 5px grey;">
+        					<div class="col-md-4">
+        						<h2>
+				               		  {{ producto.name }}
+				            	</h2>
+        					</div>
+				            <div class="col-md-4">
+				            	 <p>Distanza: {{producto.distance}} km</p>
+				            </div>
+				             <div class="col-md-4">
+				             	<a  type="button" data-toggle="modal"  data-target="#{{ producto.name }}" class="btn btn-success">{{cita}}</a>
+				             </div>
+				            
+				        </article>
+
+
+<div class="modal fade" id="{{ producto.name }}" tabindex="-1"
+    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title" id="myModalLabel">Azione confermata</h3>
+            </div>
+            <div class="modal-body">
+            	<p>Prodotto: {{name}}</p>
+            	<p>Magazzino: {{producto.name}}</p>
+            	<p>Articoli Inviati: {{ item.minQty  - item.qty}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">CHIUDI</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        			{% endif %}
+        		{% endfor %}
+                                
+        	{% endif %}
+		        
+		{% endfor %}
+
+
+
+    
+
+    
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+
+    {{ show_source_code(_self) }}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
